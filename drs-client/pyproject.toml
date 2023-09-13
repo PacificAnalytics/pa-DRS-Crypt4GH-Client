@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drs_client"
+description = "A simple DRS upload/download client with Crypt4GH support"
+version = "0.1.0"
+authors = []
+dependencies = [
+  "click",
+  "boto3",
+  "pyyaml",
+  "ga4gh-drs-client@git+https://github.com/PacificAnalytics/pa-DRS-Crypt4GH-Downloader#egg=06c6e83",
+]
+
+[project.scripts]
+drs-client = "drs_client.client:cli"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-click",
+    "pytest-cov",
+    "requests-mock",
+]

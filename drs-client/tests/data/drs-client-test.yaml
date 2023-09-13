@@ -1,0 +1,5 @@
+access_key: ACCESS
+bucket: BUCKET
+drs_url: https://DRS
+secret_key: SECRET
+storage_url: https://STORAGE
