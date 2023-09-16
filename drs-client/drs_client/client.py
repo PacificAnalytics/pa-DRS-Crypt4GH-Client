@@ -46,7 +46,10 @@ def _promptable_default_option(option, name, **kwds):
     class _OptionDefaultFromConfig(click.Option):
 
         def get_default(self, ctx, *args, **kwds):
-            value = ctx.obj.get(name)
+            try:
+                value = ctx.obj[name]
+            except KeyError:
+                value = None
             return value or super().get_default(ctx, *args, **kwds)
 
     kwds = {
